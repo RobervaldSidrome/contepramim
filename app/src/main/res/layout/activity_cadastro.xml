@@ -104,7 +104,6 @@
         android:layout_marginBottom="24dp"
         android:width="150dp"
         android:background="@android:color/holo_blue_light"
-        android:drawableLeft="@android:drawable/ic_input_add"
         android:gravity="center"
         android:text="Cadastrar"
         android:textColor="@android:color/white"
