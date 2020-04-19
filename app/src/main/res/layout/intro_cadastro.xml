@@ -33,7 +33,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="Junte-se a milhres de pessoas\n que levam a serio suas finanças"
+        android:text="Junte-se a milhares de pessoas\n que levam a sério suas finanças"
         android:textColor="@android:color/holo_blue_light"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"

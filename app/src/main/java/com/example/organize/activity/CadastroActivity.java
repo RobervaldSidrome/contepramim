@@ -15,6 +15,7 @@ import com.example.organize.helper.Base64Custom;
 import com.example.organize.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -60,6 +61,7 @@ public class CadastroActivity extends AppCompatActivity {
 
                             cadastrarUsuario();
 
+
                         }else{
                             Toast.makeText(CadastroActivity.this, "Preencha o Password",
                                     Toast.LENGTH_SHORT).show();
@@ -91,6 +93,8 @@ public class CadastroActivity extends AppCompatActivity {
                     usuario.setIdUsuario(idUsuario);
                     usuario.salvar();
 
+                    Toast.makeText(CadastroActivity.this, "Seu cadastro foi realizado!",
+                            Toast.LENGTH_SHORT).show();
                     finish();
                 }else{
 
@@ -101,10 +105,14 @@ public class CadastroActivity extends AppCompatActivity {
                         exception = "Digite uma senha mais forte!";
                     }catch (FirebaseAuthInvalidCredentialsException e){
                         exception = "Por favor, digite um email valido!";
-                    }catch (FirebaseAuthUserCollisionException e){
+                    }catch (FirebaseAuthUserCollisionException e) {
                         exception = "Esta conta já foi cadastrada!";
+                    } catch (FirebaseNetworkException e){
+                            Toast.makeText(CadastroActivity.this,
+                                    "Precisa se conectar dados móveis ou wifi",
+                                    Toast.LENGTH_SHORT).show();
                     }catch (Exception e){
-                        exception = "Erro ao cadastrar usuário: " + e.getMessage();
+                        exception = "Erro no server..." + e.getMessage();
                         e.printStackTrace();
                     }
 
