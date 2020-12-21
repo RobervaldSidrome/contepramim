@@ -28,6 +28,12 @@ public class MainActivity extends IntroActivity {
         //Slide intro 1
         addSlide(new FragmentSlide.Builder()
                 .background(android.R.color.white)
+                .fragment(R.layout.intro_0)
+                .build());
+
+        //Slide intro 1
+        addSlide(new FragmentSlide.Builder()
+                .background(android.R.color.white)
                 .fragment(R.layout.intro_1)
                 .build());
 
